@@ -124,3 +124,10 @@ resource virtualNetworks_1ms365entvnet1fw_name_WorkloadSubnet 'Microsoft.Network
     virtualNetworks_1ms365entvnet1fw_name_resource
   ]
 }
+
+
+
+
+
+
+
