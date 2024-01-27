@@ -2,8 +2,8 @@
 param location string = 'eastus'
 param adminUsername string = 'azureuser'
 param virtualMachines_6servicework_vm_name string = '6servicework-vm'
-param disks_6servicework_vm_disk1_9eeeeb78527f4130b03b188a4017c7ca_externalid string = '/subscriptions/6cfaa4da-a4b7-4bbe-91ba-2c23438b894c/resourceGroups/test-network-rg/providers/Microsoft.Compute/disks/6servicework-vm_disk1_9eeeeb78527f4130b03b188a4017c7ca'
-param networkInterfaces_6servicework_vm236_externalid string = '/subscriptions/6cfaa4da-a4b7-4bbe-91ba-2c23438b894c/resourceGroups/test-network-rg/providers/Microsoft.Network/networkInterfaces/6servicework-vm236'
+param disks_6servicework_vm_disk1_9eeeeb78527f4130b03b188a4017c7ca_externalid string = '/subscriptions/fa471bf2-a31c-4a0b-b107-c4cd96c6fa17/resourceGroups/test-network-rg/providers/Microsoft.Compute/disks/6servicework-vm_disk1_9eeeeb78527f4130b03b188a4017c7ca'
+param networkInterfaces_6servicework_vm236_externalid string = '/subscriptions/fa471bf2-a31c-4a0b-b107-c4cd96c6fa17/resourceGroups/test-network-rg/providers/Microsoft.Network/networkInterfaces/6servicework-vm236'
 
 resource virtualMachines_6servicework_vm_name_resource 'Microsoft.Compute/virtualMachines@2023-03-01' = {
   name: virtualMachines_6servicework_vm_name

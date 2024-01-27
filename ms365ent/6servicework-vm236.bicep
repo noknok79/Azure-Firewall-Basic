@@ -2,8 +2,8 @@
 param location string = 'eastus'
 
 param networkInterfaces_6servicework_vm236_name string = '6servicework-vm236'
-param virtualNetworks_1ms365entvnet1fw_externalid string = '/subscriptions/6cfaa4da-a4b7-4bbe-91ba-2c23438b894c/resourceGroups/test-network-rg/providers/Microsoft.Network/virtualNetworks/1ms365entvnet1fw'
-param networkSecurityGroups_6servicework_vm_nsg_externalid string = '/subscriptions/6cfaa4da-a4b7-4bbe-91ba-2c23438b894c/resourceGroups/test-network-rg/providers/Microsoft.Network/networkSecurityGroups/6servicework-vm-nsg'
+param virtualNetworks_1ms365entvnet1fw_externalid string = '/subscriptions/fa471bf2-a31c-4a0b-b107-c4cd96c6fa17/resourceGroups/test-network-rg/providers/Microsoft.Network/virtualNetworks/1ms365entvnet1fw'
+param networkSecurityGroups_6servicework_vm_nsg_externalid string = '/subscriptions/fa471bf2-a31c-4a0b-b107-c4cd96c6fa17/resourceGroups/test-network-rg/providers/Microsoft.Network/networkSecurityGroups/6servicework-vm-nsg'
 
 resource networkInterfaces_6servicework_vm236_name_resource 'Microsoft.Network/networkInterfaces@2023-06-01' = {
   name: networkInterfaces_6servicework_vm236_name

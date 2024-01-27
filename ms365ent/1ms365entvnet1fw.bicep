@@ -2,7 +2,7 @@
 param location string = 'eastus'
 
 param virtualNetworks_1ms365entvnet1fw_name string = '1ms365entvnet1fw'
-param routeTables_5firewall_route_externalid string = '/subscriptions/6cfaa4da-a4b7-4bbe-91ba-2c23438b894c/resourceGroups/test-network-rg/providers/Microsoft.Network/routeTables/5firewall-route'
+param routeTables_5firewall_route_externalid string = '/subscriptions/fa471bf2-a31c-4a0b-b107-c4cd96c6fa17/resourceGroups/test-network-rg/providers/Microsoft.Network/routeTables/5firewall-route'
 
 resource virtualNetworks_1ms365entvnet1fw_name_resource 'Microsoft.Network/virtualNetworks@2023-06-01' = {
   name: virtualNetworks_1ms365entvnet1fw_name
