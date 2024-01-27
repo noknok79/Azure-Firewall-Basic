@@ -37,14 +37,7 @@ stages:
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
-                az deployment group what-if --resource-group test-firewall-rg --template-file 5firewall-route.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework-vm-nsg.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 4firewal-publicip.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 3firewall-policy.bicep 
-                az deployment group what-if --resource-group test-firewall-rg --template-file 1ms365entvnet1fw.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 2firewall-ms365ent.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework-vm.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework-vm236.bicep
+                az deployment group what-if --resource-group test-firewall-rg --template-file main.bicep
               workingDirectory: '$(System.DefaultWorkingDirectory)/ms365ent'
           - task: AzureCLI@2
             displayName: Create resources in MS365ENT
@@ -53,14 +46,7 @@ stages:
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
-                az deployment group create --resource-group test-firewall-rg --template-file 5firewall-route.bicep
-                az deployment group create --resource-group test-firewall-rg --template-file 6servicework-vm-nsg.bicep
-                az deployment group create --resource-group test-firewall-rg --template-file 4firewal-publicip.bicep
-                az deployment group create --resource-group test-firewall-rg --template-file 1ms365entvnet1fw.bicep
-                az deployment group create --resource-group test-firewall-rg --template-file 2firewall-ms365ent.bicep
-                az deployment group create --resource-group test-firewall-rg --template-file 3firewall-policy.bicep
-                az deployment group create --resource-group test-firewall-rg --template-file 6servicework-vm.bicep
-                az deployment group create --resource-group test-firewall-rg --template-file 6servicework-vm236.bicep
+                az deployment group create --resource-group test-firewall-rg --template-file main.bicep
               workingDirectory: '$(System.DefaultWorkingDirectory)/ms365ent'
           
 
