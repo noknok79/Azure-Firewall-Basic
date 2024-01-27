@@ -45,7 +45,6 @@ stages:
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework-vm.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework-vm-nsg.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework-vm236.bicep
-
               workingDirectory: '$(System.DefaultWorkingDirectory)/ms365ent'
           - task: AzureCLI@2
             displayName: Create resources in MS365ENT
