@@ -33,7 +33,7 @@ stages:
           - task: AzureCLI@2
             displayName: What-If Check
             inputs:
-              azureSubscription: 'ms365enterprise-test-firewall-rg-connection'
+              azureSubscription: 'win365ent-test-firewall-rg-connection'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
@@ -49,7 +49,7 @@ stages:
           - task: AzureCLI@2
             displayName: Create resources in MS365ENT
             inputs:
-              azureSubscription: 'ms365enterprise-test-firewall-rg-connection'
+              azureSubscription: 'win365ent-test-firewall-rg-connection'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
