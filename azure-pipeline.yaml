@@ -38,7 +38,7 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: |
                 az deployment group what-if --resource-group test-firewall-rg --template-file main.bicep
-              workingDirectory: '$(System.DefaultWorkingDirectory)/ms365ent'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
           - task: AzureCLI@2
             displayName: Create resources in MS365ENT
             inputs:
@@ -47,6 +47,6 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: |
                 az deployment group create --resource-group test-firewall-rg --template-file main.bicep
-              workingDirectory: '$(System.DefaultWorkingDirectory)/ms365ent'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
           
 
