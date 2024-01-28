@@ -90,7 +90,7 @@ stages:
           
 
           - task: AzureCLI@2
-            displayName: Create resources in WIN365ENT
+            displayName: Insert Firewall Policy Rules
             inputs:
               azureSubscription: 'win365ent-test-firewall-rg-connection'
               scriptType: 'bash'
