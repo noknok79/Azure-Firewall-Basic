@@ -26,7 +26,7 @@ stages:
           - task: PublishPipelineArtifact@1
             displayName: Publish Files to Pipeline
             inputs:
-              targetPath: "$(System.DefaultWorkingDirectory)/ms365ent"
+              targetPath: "$(System.DefaultWorkingDirectory)/win365ent"
               artifact: "ms365ent-out"
               publishLocation: "pipeline"
           
