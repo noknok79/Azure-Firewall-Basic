@@ -52,7 +52,7 @@ stages:
         pool:
           vmImage: "ubuntu-latest"
           environment: $(MS365ENT_ENVIRONMENT)
-        continueOnError: false
+        continueOnError: true
         steps:
           - task: PublishPipelineArtifact@1
             displayName: Publish Files to Pipeline
@@ -80,7 +80,7 @@ stages:
         pool:
           vmImage: "ubuntu-latest"
           environment: $(MS365ENT_ENVIRONMENT)
-        continueOnError: false
+        continueOnError: true
         steps:
           - task: PublishPipelineArtifact@1
             displayName: Publish Files to Pipeline
