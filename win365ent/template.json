@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "adminPassword": {
-            "type": "securestring"
+            "type": "String"
         },
         "routeTables_5firewall_route_name": {
             "defaultValue": "5firewall-route",
@@ -138,7 +138,7 @@
                         "sku": "2019-datacenter-gensecond",
                         "version": "latest"
                     },
-                    "osDisk": { 
+                    "osDisk": {
                         "osType": "Windows",
                         "name": "[concat(parameters('virtualMachines_6servicework_vm_name'), '_disk1')]",
                         "createOption": "FromImage",
@@ -155,7 +155,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_6servicework_vm_name')]",
                     "adminUsername": "azureuser",
-                    "adminPassword": [parameters('adminPassword')]
+                    "adminPassword": "m@rkV!091234",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true,
