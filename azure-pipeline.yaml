@@ -38,6 +38,7 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: |
                 az deployment group what-if --resource-group test-firewall-rg --template-file 5firewall_route.bicep
+                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm236.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 1ms365entvnet1fw.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 2firewall_ms365ent.bicep
@@ -55,6 +56,7 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: |
                 az deployment group what-if --resource-group test-firewall-rg --template-file 5firewall_route.bicep
+                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm236.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 1ms365entvnet1fw.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 2firewall_ms365ent.bicep
