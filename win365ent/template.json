@@ -2,9 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "adminPassword": {
-            "type": "String"
-        },
         "routeTables_5firewall_route_name": {
             "defaultValue": "5firewall-route",
             "type": "String"
