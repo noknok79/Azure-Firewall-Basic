@@ -38,6 +38,7 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: |
                 az deployment group what-if --resource-group test-firewall-rg --template-file 5firewall_route.bicep
+                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm_nsg.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm236.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 1ms365entvnet1fw.bicep
@@ -45,7 +46,6 @@ stages:
                 az deployment group what-if --resource-group test-firewall-rg --template-file 3firewall_policy.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 4firewal_publicip.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm236.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm_nsg.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file shutdown_computevm_6servicework_vm.bicep
               workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
           - task: AzureCLI@2
@@ -56,6 +56,7 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: |
                 az deployment group what-if --resource-group test-firewall-rg --template-file 5firewall_route.bicep
+                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm_nsg.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm236.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 1ms365entvnet1fw.bicep
@@ -63,7 +64,6 @@ stages:
                 az deployment group what-if --resource-group test-firewall-rg --template-file 3firewall_policy.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 4firewal_publicip.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm236.bicep
-                az deployment group what-if --resource-group test-firewall-rg --template-file 6servicework_vm_nsg.bicep
                 az deployment group what-if --resource-group test-firewall-rg --template-file shutdown_computevm_6servicework_vm.bicep
               workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
           
