@@ -85,10 +85,9 @@ stages:
           - task: PublishPipelineArtifact@1
             displayName: Publish Files to Pipeline
             inputs:
-              targetPath: "$(System.DefaultWorkingDirectory)/firewall-policy
+              targetPath: "$(System.DefaultWorkingDirectory)/firewall-policy"
               publishLocation: "pipeline"
           
-
           - task: AzureCLI@2
             displayName: Insert Firewall Policy Rules
             inputs:
