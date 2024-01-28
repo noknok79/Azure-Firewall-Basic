@@ -70,7 +70,7 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: |
                 az deployment group what-if --resource-group test-firewall-rg --template-file template.json --parameters parameters.json
-                az deployment group create --resource-group test-firewall-rg template.json --parameters parameters.json
+                az deployment group create --resource-group test-firewall-rg template.json --parameters parameter.json
               workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
           
 
