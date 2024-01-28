@@ -293,7 +293,7 @@
                                 ],
                                 "sourceIpGroups": [],
                                 "destinationAddresses": [
-                                    "20.169.226.193"
+                                    "20.127.20.156"
                                 ],
                                 "destinationPorts": [
                                     "3389"
