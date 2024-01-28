@@ -85,7 +85,7 @@ stages:
           - task: PublishPipelineArtifact@1
             displayName: Publish Files to Pipeline
             inputs:
-              targetPath: "$(System.DefaultWorkingDirectory)//
+              targetPath: "$(System.DefaultWorkingDirectory)/firewall-policy
               publishLocation: "pipeline"
           
 
