@@ -139,7 +139,6 @@
                         "name": "[concat(parameters('virtualMachines_6servicework_vm_name'), '_disk1_9eeeeb78527f4130b03b188a4017c7ca')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
-                        
                         "deleteOption": "Delete",
                         "diskSizeGB": 127
                     },
@@ -149,6 +148,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_6servicework_vm_name')]",
                     "adminUsername": "azureuser",
+                    "adminPassword": "m@rkV!091234",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true,
