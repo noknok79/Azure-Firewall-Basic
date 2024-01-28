@@ -74,3 +74,30 @@ stages:
               workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
           
 
+  - stage: FirewallPolicyRules
+    jobs:
+      - job: FirewallPolicyRules
+        pool:
+          vmImage: "ubuntu-latest"
+          environment: $(MS365ENT_ENVIRONMENT)
+        continueOnError: false
+        steps:
+          - task: PublishPipelineArtifact@1
+            displayName: Publish Files to Pipeline
+            inputs:
+              targetPath: "$(System.DefaultWorkingDirectory)//
+              publishLocation: "pipeline"
+          
+
+          - task: AzureCLI@2
+            displayName: Create resources in WIN365ENT
+            inputs:
+              azureSubscription: 'win365ent-test-firewall-rg-connection'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az deployment group what-if --resource-group test-firewall-rg --template-file template.json --parameters parameters.json
+                az deployment group create --resource-group test-firewall-rg --template-file template.json --parameters parameters.json
+              workingDirectory: '$(System.DefaultWorkingDirectory)//firewall-policy'
+          
+
