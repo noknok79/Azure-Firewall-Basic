@@ -2,6 +2,9 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "adminPassword": {
+            "type": "securestring"
+        },
         "routeTables_5firewall_route_name": {
             "defaultValue": "5firewall-route",
             "type": "String"
@@ -78,6 +81,7 @@
                 "tier": "Regional"
             },
             "properties": {
+                "ipAddress": "23.101.142.188",
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
@@ -134,11 +138,14 @@
                         "sku": "2019-datacenter-gensecond",
                         "version": "latest"
                     },
-                    "osDisk": {
+                    "osDisk": { 
                         "osType": "Windows",
-                        "name": "[concat(parameters('virtualMachines_6servicework_vm_name'), '_disk1_9eeeeb78527f4130b03b188a4017c7ca')]",
+                        "name": "[concat(parameters('virtualMachines_6servicework_vm_name'), '_disk1')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS"
+                        },
                         "deleteOption": "Delete",
                         "diskSizeGB": 127
                     },
@@ -148,7 +155,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_6servicework_vm_name')]",
                     "adminUsername": "azureuser",
-                    "adminPassword": "m@rkV!091234",
+                    "adminPassword": [parameters('adminPassword')]
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true,
@@ -160,7 +167,8 @@
                         "enableVMAgentPlatformUpdates": false
                     },
                     "secrets": [],
-                    "allowExtensionOperations": true
+                    "allowExtensionOperations": true,
+                    "requireGuestProvisionSignal": true
                 },
                 "securityProfile": {
                     "uefiSettings": {
@@ -293,7 +301,7 @@
                                 ],
                                 "sourceIpGroups": [],
                                 "destinationAddresses": [
-                                    "20.127.20.156"
+                                    "20.163.254.255"
                                 ],
                                 "destinationPorts": [
                                     "3389"
