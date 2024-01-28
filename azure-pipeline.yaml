@@ -45,7 +45,7 @@ stages:
               workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
 
 
-stages:
+
   - stage: MS365ENTResourcesPreparation
     jobs:
       - job: MS365ENTResources
