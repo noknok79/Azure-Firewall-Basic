@@ -81,7 +81,6 @@
                 "tier": "Regional"
             },
             "properties": {
-                "ipAddress": "23.101.142.188",
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
