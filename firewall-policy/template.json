@@ -91,7 +91,7 @@
                         "rules": [
                             {
                                 "ruleType": "NatRule",
-                                "name": "RDP-NAT",
+                                "name": "NatRule",
                                 "translatedAddress": "10.0.2.4",
                                 "translatedPort": "3389",
                                 "ipProtocols": [
@@ -102,15 +102,15 @@
                                 ],
                                 "sourceIpGroups": [],
                                 "destinationAddresses": [
-                                    "20.163.254.255"
+                                    "20.119.51.177"
                                 ],
                                 "destinationPorts": [
                                     "3389"
                                 ]
                             }
                         ],
-                        "name": "RDP",
-                        "priority": 200
+                        "name": "dnat-collection01",
+                        "priority": 100
                     }
                 ]
             }
