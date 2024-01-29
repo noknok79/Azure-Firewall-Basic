@@ -151,7 +151,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_6servicework_vm_name')]",
                     "adminUsername": "azureuser",
-                    "adminPassword": "m@rkV!091234",
+                    "adminPassword": "m@rkV!0912345678",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true,
@@ -163,8 +163,7 @@
                         "enableVMAgentPlatformUpdates": false
                     },
                     "secrets": [],
-                    "allowExtensionOperations": true,
-                    "requireGuestProvisionSignal": true
+                    "allowExtensionOperations": true
                 },
                 "securityProfile": {
                     "uefiSettings": {
@@ -296,9 +295,7 @@
                                     "*"
                                 ],
                                 "sourceIpGroups": [],
-                                "destinationAddresses": [
-                                    "20.163.254.255"
-                                ],
+                                "destinationAddresses": [],
                                 "destinationPorts": [
                                     "3389"
                                 ]
@@ -362,6 +359,7 @@
                 "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_5firewall_route_name'))]"
             ],
             "properties": {
+                "ipAddress": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_4firewal_publicip_name'))]",
                 "addressPrefix": "0.0.0.0/0",
                 "nextHopType": "VirtualAppliance",
                 "nextHopIpAddress": "10.0.1.4",

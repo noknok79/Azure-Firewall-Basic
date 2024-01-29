@@ -2,7 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "publicIPAddresses_4firewal_publicip_name": {
+        "publicIPAddresses_4firewall_publicip_name": {
             "value": null
         }
     }
