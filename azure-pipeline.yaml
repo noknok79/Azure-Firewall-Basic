@@ -32,20 +32,6 @@ stages:
               publishLocation: "pipeline"
           
 
-
-          - task: AzureCLI@2
-            displayName: What-If Check
-            inputs:
-              azureSubscription: 'win365ent-test-firewall-rg-connection'
-              scriptType: 'bash'
-              scriptLocation: 'inlineScript'
-              inlineScript: |
-                az deployment group what-if --resource-group test-firewall-rg --template-file 4firewal-publicip.json --parameters 4firewall-publicparam.json
-                az deployment group create --resource-group test-firewall-rg --template-file 4firewal-publicip.json --parameters 4firewall-publicparam.json
-              workingDirectory: '$(System.DefaultWorkingDirectory)/win365ent'
-
-
-
   - stage: MS365ENTResourcesPreparation
     jobs:
       - job: MS365ENTResources
@@ -65,7 +51,7 @@ stages:
           - task: AzureCLI@2
             displayName: Create resources in WIN365ENT
             inputs:
-              azureSubscription: 'win365ent-test-firewall-rg-connection'
+              azureSubscription: 'contoso-test-firewall-rg-connection'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
@@ -91,7 +77,7 @@ stages:
           - task: AzureCLI@2
             displayName: Insert Firewall Policy Rules
             inputs:
-              azureSubscription: 'win365ent-test-firewall-rg-connection'
+              azureSubscription: 'contoso-test-firewall-rg-connection'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
