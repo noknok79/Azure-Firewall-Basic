@@ -102,7 +102,7 @@
                                 ],
                                 "sourceIpGroups": [],
                                 "destinationAddresses": [
-                                    "20.106.146.165"
+                                    "20.115.24.2"
                                 ],
                                 "destinationPorts": [
                                     "3389"
