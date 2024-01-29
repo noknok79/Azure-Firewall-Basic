@@ -51,7 +51,7 @@ stages:
           - task: AzureCLI@2
             displayName: Create resources in WIN365ENT
             inputs:
-              azureSubscription: 'contoso'
+              azureSubscription: 'win365ent'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
@@ -77,7 +77,7 @@ stages:
           - task: AzureCLI@2
             displayName: Insert Firewall Policy Rules
             inputs:
-              azureSubscription: 'contoso'
+              azureSubscription: 'win365ent'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
