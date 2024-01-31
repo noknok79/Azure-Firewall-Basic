@@ -98,7 +98,7 @@
                 ]
             }
         },
-        {
+        /*{
             "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
             "apiVersion": "2023-06-01",
             "name": "[concat(parameters('firewallPolicies_3firewall_policy_name'), '/DefaultDnatRuleCollectionGroup')]",
@@ -140,7 +140,7 @@
                     }
                 ]
             }
-        },
+        },*/
         {
             "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
             "apiVersion": "2023-06-01",

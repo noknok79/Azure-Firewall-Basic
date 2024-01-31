@@ -216,57 +216,7 @@
                 "targetResourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_6servicework_vm_name'))]"
             }
         },
-        {
-            "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
-            "apiVersion": "2023-06-01",
-            "name": "[concat(parameters('firewallPolicies_3firewall_policy_name'), '/DefaultApplicationRuleCollectionGroup')]",
-            "location": "eastus",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/firewallPolicies', parameters('firewallPolicies_3firewall_policy_name'))]"
-            ],
-            "properties": {
-                "priority": 300,
-                "ruleCollections": [
-                    {
-                        "ruleCollectionType": "FirewallPolicyFilterRuleCollection",
-                        "action": {
-                            "type": "Allow"
-                        },
-                        "rules": [
-                            {
-                                "ruleType": "ApplicationRule",
-                                "name": "Allow-Google",
-                                "protocols": [
-                                    {
-                                        "protocolType": "Http",
-                                        "port": 80
-                                    },
-                                    {
-                                        "protocolType": "Https",
-                                        "port": 443
-                                    }
-                                ],
-                                "fqdnTags": [],
-                                "webCategories": [],
-                                "targetFqdns": [
-                                    "www.google.com"
-                                ],
-                                "targetUrls": [],
-                                "terminateTLS": false,
-                                "sourceAddresses": [
-                                    "10.0.2.0/24"
-                                ],
-                                "destinationAddresses": [],
-                                "sourceIpGroups": [],
-                                "httpHeadersToInsert": []
-                            }
-                        ],
-                        "name": "app-collection01",
-                        "priority": 200
-                    }
-                ]
-            }
-        },
+        
         {
             "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
             "apiVersion": "2023-06-01",
@@ -305,50 +255,6 @@
                             }
                         ],
                         "name": "RDP",
-                        "priority": 200
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
-            "apiVersion": "2023-06-01",
-            "name": "[concat(parameters('firewallPolicies_3firewall_policy_name'), '/DefaultNetworkRuleCollectionGroup')]",
-            "location": "eastus",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/firewallPolicies', parameters('firewallPolicies_3firewall_policy_name'))]"
-            ],
-            "properties": {
-                "priority": 200,
-                "ruleCollections": [
-                    {
-                        "ruleCollectionType": "FirewallPolicyFilterRuleCollection",
-                        "action": {
-                            "type": "Allow"
-                        },
-                        "rules": [
-                            {
-                                "ruleType": "NetworkRule",
-                                "name": "Allow-DNS",
-                                "ipProtocols": [
-                                    "UDP"
-                                ],
-                                "sourceAddresses": [
-                                    "10.0.2.0/24"
-                                ],
-                                "sourceIpGroups": [],
-                                "destinationAddresses": [
-                                    "209.244.0.3",
-                                    "209.244.0.4"
-                                ],
-                                "destinationIpGroups": [],
-                                "destinationFqdns": [],
-                                "destinationPorts": [
-                                    "53"
-                                ]
-                            }
-                        ],
-                        "name": "net-collection01",
                         "priority": 200
                     }
                 ]
