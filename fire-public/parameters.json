@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "firewallPolicies_3firewall_policy_name": {
+            "value": null
+        },
+        "publicIPAddresses_4firewal_publicip_name": {
+            "value": null
+        }
+    }
+}

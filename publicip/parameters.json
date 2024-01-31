@@ -1,0 +1,37 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "extendedLocation": {
+            "value": {}
+        },
+        "publicIpAddressName": {
+            "value": "publicip1"
+        },
+        "sku": {
+            "value": "Standard"
+        },
+        "publicIpAddressVersion": {
+            "value": "IPv4"
+        },
+        "publicIPAllocationMethod": {
+            "value": "Static"
+        },
+        "idleTimeoutInMinutes": {
+            "value": 4
+        },
+        "tier": {
+            "value": "Regional"
+        },
+        "ddosProtectionMode": {
+            "value": "VirtualNetworkInherited"
+        },
+        "zones": {},
+        "tagsByResource": {
+            "value": {}
+        }
+    }
+}

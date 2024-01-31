@@ -78,6 +78,7 @@
                 "tier": "Regional"
             },
             "properties": {
+                //"ipAddress": "[resourceId(parameters('publicIPAddresses_4firewal_publicip_name')).ipAddress]",
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
@@ -280,7 +281,7 @@
                     {
                         "ruleCollectionType": "FirewallPolicyNatRuleCollection",
                         "action": {
-                            "type": "Dnat"
+                            "type": "DNAT"
                         },
                         "rules": [
                             {
@@ -295,7 +296,9 @@
                                     "*"
                                 ],
                                 "sourceIpGroups": [],
-                                "destinationAddresses": [],
+                                "destinationAddresses": [
+                                    "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_4firewal_publicip_name')), '2023-06-01').ipAddress]"
+                                ],
                                 "destinationPorts": [
                                     "3389"
                                 ]
@@ -359,7 +362,7 @@
                 "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_5firewall_route_name'))]"
             ],
             "properties": {
-                "ipAddress": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_4firewal_publicip_name'))]",
+                //"ipAddress": "[reference(parameters('firewallPolicies_3firewall_policy_name')).ipAddress]",
                 "addressPrefix": "0.0.0.0/0",
                 "nextHopType": "VirtualAppliance",
                 "nextHopIpAddress": "10.0.1.4",
@@ -580,5 +583,11 @@
                 }
             }
         }
-    ]
+    ],
+    "outputs": {
+        "publicIpAddress": {
+            "type": "string",
+            "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_4firewal_publicip_name'))).ipAddress]"
+        }
+    }
 }
