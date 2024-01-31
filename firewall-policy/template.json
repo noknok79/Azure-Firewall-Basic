@@ -102,7 +102,7 @@
                                 ],
                                 "sourceIpGroups": [],
                                 "destinationAddresses": [
-                                    "20.231.87.40"
+                                    "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_4firewal_publicip_name')), '2023-06-01').ipAddress]"
                                 ],
                                 "destinationPorts": [
                                     "3389"
