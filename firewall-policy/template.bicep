@@ -24,7 +24,7 @@ resource firewallPolicies_3firewall_policy_name_DefaultApplicationRuleCollection
       {
         ruleCollectionType: 'FirewallPolicyFilterRuleCollection'
         action: {
-          type: 'Allow'
+          type: 'Application'
         }
         rules: [
           {
@@ -72,7 +72,7 @@ resource firewallPolicies_3firewall_policy_name_DefaultDnatRuleCollectionGroup '
       {
         ruleCollectionType: 'FirewallPolicyNatRuleCollection'
         action: {
-          type: 'Dnat'
+          type: 'DNAT'
         }
         rules: [
           {
@@ -112,7 +112,7 @@ resource firewallPolicies_3firewall_policy_name_DefaultNetworkRuleCollectionGrou
       {
         ruleCollectionType: 'FirewallPolicyFilterRuleCollection'
         action: {
-          type: 'Allow'
+          type: 'Network'
         }
         rules: [
           {
