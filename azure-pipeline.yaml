@@ -83,6 +83,6 @@ stages:
               inlineScript: |
                 az deployment group what-if --resource-group test-firewall-rg --template-file template.json --parameters parameters.json
                 az deployment group create --resource-group test-firewall-rg --template-file template.json --parameters parameters.json
-              workingDirectory: '$(System.DefaultWorkingDirectory)/firewall-policy'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/fire-public'
           
 
