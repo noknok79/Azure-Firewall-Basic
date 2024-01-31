@@ -61,7 +61,7 @@
                     {
                         "ruleCollectionType": "FirewallPolicyFilterRuleCollection",
                         "action": {
-                            "type": "Allow"
+                            "type": "Application"
                         },
                         "rules": [
                             {
@@ -112,7 +112,7 @@
                     {
                         "ruleCollectionType": "FirewallPolicyNatRuleCollection",
                         "action": {
-                            "type": "Dnat"
+                            "type": "DNAT"
                         },
                         "rules": [
                             {
@@ -155,7 +155,7 @@
                     {
                         "ruleCollectionType": "FirewallPolicyFilterRuleCollection",
                         "action": {
-                            "type": "Allow"
+                            "type": "Network"
                         },
                         "rules": [
                             {

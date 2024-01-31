@@ -281,7 +281,7 @@
                     {
                         "ruleCollectionType": "FirewallPolicyNatRuleCollection",
                         "action": {
-                            "type": "Allow"
+                            "type": "DNAT"
                         },
                         "rules": [
                             {
