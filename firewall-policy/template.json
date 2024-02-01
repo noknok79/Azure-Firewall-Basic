@@ -35,7 +35,7 @@
                     {
                         "ruleCollectionType": "FirewallPolicyFilterRuleCollection",
                         "action": {
-                            "type": "Application"
+                            "type": "Allow"
                         },
                         "rules": [
                             {
@@ -75,49 +75,6 @@
         {
             "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
             "apiVersion": "2023-06-01",
-            "name": "[concat(parameters('firewallPolicies_3firewall_policy_name'), '/DefaultDnatRuleCollectionGroup')]",
-            "location": "eastus",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/firewallPolicies', parameters('firewallPolicies_3firewall_policy_name'))]"
-            ],
-            "properties": {
-                "priority": 100,
-                "ruleCollections": [
-                    {
-                        "ruleCollectionType": "FirewallPolicyNatRuleCollection",
-                        "action": {
-                            "type": "DNAT"
-                        },
-                        "rules": [
-                            {
-                                "ruleType": "NatRule",
-                                "name": "NatRule",
-                                "translatedAddress": "10.0.2.4",
-                                "translatedPort": "3389",
-                                "ipProtocols": [
-                                    "TCP"
-                                ],
-                                "sourceAddresses": [
-                                    "*"
-                                ],
-                                "sourceIpGroups": [],
-                                "destinationAddresses": [
-                                    "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_4firewal_publicip_name')), '2023-06-01').ipAddress]"
-                                ],
-                                "destinationPorts": [
-                                    "3389"
-                                ]
-                            }
-                        ],
-                        "name": "dnat-collection01",
-                        "priority": 100
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
-            "apiVersion": "2023-06-01",
             "name": "[concat(parameters('firewallPolicies_3firewall_policy_name'), '/DefaultNetworkRuleCollectionGroup')]",
             "location": "eastus",
             "dependsOn": [
@@ -129,7 +86,7 @@
                     {
                         "ruleCollectionType": "FirewallPolicyFilterRuleCollection",
                         "action": {
-                            "type": "Network"
+                            "type": "Allow"
                         },
                         "rules": [
                             {
