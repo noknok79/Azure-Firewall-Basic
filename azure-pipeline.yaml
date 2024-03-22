@@ -10,25 +10,25 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - name: WIN365ENT_ENVIRONMENT
-    value: win365ent
-  - name: MS365ENT_ENVIRONMENT
-    value: ms365ent
+  - name: BlueWing_ENVIRONMENT
+    value: bluewing
+  - name: RedWing_ENVIRONMENT
+    value: redwing
 
 stages:
-  - stage: WIN365ENTResourcesPreparation
+  - stage: BlueWingResourcesPreparation
     jobs:
-      - job: WIN365ENTResources
+      - job: BlueWinResources
         pool:
           vmImage: "ubuntu-latest"
-          environment: $(WIN365ENT_ENVIRONMENT)
+          environment: $(BlueWing_ENVIRONMENT)
         continueOnError: false
         steps:
           - task: PublishPipelineArtifact@1
             displayName: Publish Files to Pipeline
             inputs:
               targetPath: "$(System.DefaultWorkingDirectory)/win365ent"
-              artifact: "ms365ent-out"
+              artifact: "win365ent-out"
               publishLocation: "pipeline"
           
 
@@ -37,21 +37,21 @@ stages:
       - job: MS365ENTResources
         pool:
           vmImage: "ubuntu-latest"
-          environment: $(MS365ENT_ENVIRONMENT)
+          environment: $(RedWing_ENVIRONMENT)
         continueOnError: true
         steps:
           - task: PublishPipelineArtifact@1
             displayName: Publish Files to Pipeline
             inputs:
               targetPath: "$(System.DefaultWorkingDirectory)/win365ent"
-              artifact: "ms365ent-out"
+              artifact: "win365ent-out"
               publishLocation: "pipeline"
           
 
           - task: AzureCLI@2
-            displayName: Create resources in WIN365ENT
+            displayName: Create resources in BlueWing
             inputs:
-              azureSubscription: 'markvilla-yen'
+              azureSubscription: 'bluewing-v588c-subsc'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
@@ -77,7 +77,7 @@ stages:
           - task: AzureCLI@2
             displayName: Insert Firewall Policy Rules
             inputs:
-              azureSubscription: 'markvilla-yen'
+              azureSubscription: 'bluewing-v588c-subsc'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               inlineScript: |
